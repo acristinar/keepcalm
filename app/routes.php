@@ -17,4 +17,6 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/erro', 'ErroController@mostrarErro');
+//Route::get('/erro', 'ErroController@mostrarErro');
+Route::any('/erro', 'ErroController@mostrarErro');
+Route::get('/testamentos/insert', 'TestamentoController@insert');
