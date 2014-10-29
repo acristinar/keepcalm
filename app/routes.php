@@ -19,4 +19,4 @@ Route::get('/', function()
 
 //Route::get('/erro', 'ErroController@mostrarErro');
 Route::any('/erro', 'ErroController@mostrarErro');
-Route::get('/testamentos/insert', 'TestamentoController@insert');
+Route::any('/testamentos/insert', 'TestamentoController@insert');
