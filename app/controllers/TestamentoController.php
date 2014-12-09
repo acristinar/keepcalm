@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -18,12 +19,32 @@ class TestamentoController extends BaseController {
             $data = Input::get('data');
             $condSocial = Input::get('condSocial');
             $tituloSocial = Input::get('tituloSocial');
+            $causaMorte = Input::get('causaMorte');
+            $igrejaEnterro = Input::get('igrejaEnterro');
+            $habitoEnterro = Input::get('habitoEnterro');
+            $sexo = Input::get('sexo');
+            $naturalidade = Input::get('naturalidade');
+            $ocupacao = Input::get('ocupacao');
+            $moradia = Input::get('moradia');
+            $testamenteiro = Input::get('testamenteiro');
+            $relacaoTestamenteiro= Input::get('relacaoTestamenteiro');
+
+
 
             $testamento = new Testamento();
             $testamento->nome = $nome;
             $testamento->data = $data;
             $testamento->condSocial = $condSocial;
             $testamento->tituloSocial = $tituloSocial;
+            $testamento->causaMorte = $causaMorte;
+            $testamento->igrejaEnterro = $igrejaEnterro;
+            $testamento->habitoEnterro = $habitoEnterro;
+            $testamento->sexo = $sexo;
+            $testamento->naturalidade = $naturalidade;
+            $testamento->ocupacao = $ocupacao;
+            $testamento->moradia = $moradia;
+            $testamento->testamenteiro = $testamenteiro;
+            $testamento->relacaoTestamenteiro = $relacaoTestamenteiro;
 
             $testamento->save();
         }

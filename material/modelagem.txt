@@ -7,16 +7,17 @@ Tipo de documento - Nome da tabela no banco
 OBSERVAÇÕES:
 1°) - TUDO é sujeito a discussão, revisão e alteração
 2°) - Aonde o campo ainda não tiver sido criado e o tipo for string, o tipo definitivo será posteriormente alterado conforme o tamanho do texto esperado. A discussão será feita caso a caso.
-3°) - Está pendente discutirmos uma padronização para classificação de gênero
+3°) - M para masculino, F para feminino, I para indefinido, null para não registrado
+4º) - CAMELCASE!!!
 
 +++++++++++++++++++++++++++++++++++++++ FIM DO PRÓLOGO +++++++++++++++++++++++++++++++++++++++
 
 
 
-Óbito/Testamento
+Óbito/Testamento - testamento
 
 - Ano de falecimento / data - data - date
-- Condições / causa da morte - ainda não foi criado - string
+- Condições / causa da morte - ainda não foi criado - text
 - Condição social do falecido - condSocial - text
 - Igreja em q foi enterrado - ainda não foi criado - string
 - Hábito no qual foi enterrado - ainda não foi criado - string
@@ -30,4 +31,7 @@ OBSERVAÇÕES:
 - Moradia - ainda não foi criado - string
 - Testamenteiro - ainda não foi criado - string 
 - Relação com o testamenteiro - ainda não foi criado - string
+
+
+
 
