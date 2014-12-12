@@ -51,4 +51,11 @@ class TestamentoController extends BaseController {
 
         $this->layout->content = View::make('testamento.insert');
     }
+
+    public function find(){
+
+        $testamentos = Testamento::all();
+
+        $this->layout->content = View::make('testamento.find', array('testamentos' => $testamentos));
+    }
 } 
