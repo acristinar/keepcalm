@@ -52,10 +52,16 @@ class TestamentoController extends BaseController {
         $this->layout->content = View::make('testamento.insert');
     }
 
-    public function find(){
+    public function find($id = null){
 
-        $testamentos = Testamento::all();
+        if($id == null) {
+            $testamentos = Testamento::all();
+        }else{
+            $testamentos = Testamento::find($id);
+        }
 
         $this->layout->content = View::make('testamento.find', array('testamentos' => $testamentos));
     }
+
+
 } 
