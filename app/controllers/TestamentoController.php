@@ -56,11 +56,14 @@ class TestamentoController extends BaseController {
 
         if($id == null) {
             $testamentos = Testamento::all();
+            $this->layout->content = View::make('testamento.find', array('testamentos' => $testamentos));
+
         }else{
-            $testamentos = Testamento::find($id);
+            $testamento = Testamento::find($id);
+            $this->layout->content = View::make('testamento.read', array('testamento' => $testamento));
         }
 
-        $this->layout->content = View::make('testamento.find', array('testamentos' => $testamentos));
+
     }
 
 
