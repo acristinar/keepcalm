@@ -1,9 +1,11 @@
 
 
-  @extends('pai')
+@extends('pai')
 
+@section('content')
 
-  @section('content')
+    {{isset($success)? "<span>".$success."</span>" : ""}}
+
     {{ Form::open(array('url'=>'testamentos/insert'))   }}
 
         {{ Form::label('nome','Nome') }}
@@ -11,44 +13,45 @@
 
         {{ Form::label('data','Ano de falecimento') }}
         <input type="date" name="data" class="campos" />
+        {{ $errors->first('data', '<span>:message</span>') }}
 
         {{ Form::label('condSocial','Condição Social') }}
-                {{ Form::text('condSocial') }}
+        {{ Form::text('condSocial') }}
 
         {{ Form::label('tituloSocial','Título') }}
-                {{ Form::text('tituloSocial') }}
+        {{ Form::text('tituloSocial') }}
 
         {{ Form::label('causaMorte','Causa da Morte') }}
-                {{ Form::text('causaMorte') }}
+        {{ Form::text('causaMorte') }}
 
         {{ Form::label('igrejaEnterro','Igreja em que foi enterrado') }}
-                {{ Form::text('igrejaEnterro') }}
+        {{ Form::text('igrejaEnterro') }}
 
         {{ Form::label('habitoEnterro','Hábito no qual foi enterrado') }}
-                {{ Form::text('habitoEnterro') }}
+        {{ Form::text('habitoEnterro') }}
 
         {{ Form::label('sexo','Sexo') }}
-                {{ Form::select('sexo', array('F' => 'Feminino', 'M' => 'Masculino','I' => 'Indefinido')); }}
+        {{ Form::select('sexo', array('F' => 'Feminino', 'M' => 'Masculino','I' => 'Indefinido')); }}
+        {{ $errors->first('sexo', '<span>:message</span>') }}
 
         {{ Form::label('naturalidade','Naturalidade') }}
-                {{ Form::text('naturalidade') }}
+        {{ Form::text('naturalidade') }}
 
         {{ Form::label('ocupacao','Ofício/ocupação') }}
-                        {{ Form::text('ocupacao') }}
+        {{ Form::text('ocupacao') }}
 
         {{ Form::label('moradia','Moradia') }}
-                        {{ Form::text('moradia') }}
+        {{ Form::text('moradia') }}
 
         {{ Form::label('testamenteiro','Testamenteiro') }}
-                        {{ Form::text('testamenteiro') }}
+        {{ Form::text('testamenteiro') }}
 
         {{ Form::label('relacaoTestamenteiro','Relação com o testamenteiro') }}
-                        {{ Form::text('relacaoTestamenteiro') }}
-
+        {{ Form::text('relacaoTestamenteiro') }}
 
         {{ Form::submit('Enviar') }}
 
     {{ Form::close() }}
 
 
-  @stop
+@stop

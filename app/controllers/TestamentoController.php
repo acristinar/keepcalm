@@ -11,10 +11,14 @@ class TestamentoController extends BaseController {
 
     protected $layout = 'pai';
 
-    public function insert(){
+    public function insert()
+    {
 
-        if ( (   (Input::has('nome')&&(Input::has('data')))&&((Input::has('condSocial')&&(Input::has('tituloSocial'))))))
-        {
+        if (Input::has('nome') || Input::has('data') || Input::has('condSocial') || Input::has('tituloSocial') ||
+            Input::has('causaMorte') || Input::has('igrejaEnterro') || Input::has('habitoEnterro') ||
+            Input::has('naturalidade') || Input::has('ocupacao') || Input::has('moradia') || Input::has('testamenteiro')
+            || Input::has('relacaoTestamenteiro') ) {
+
             $nome = Input::get('nome');
             $data = Input::get('data');
             $condSocial = Input::get('condSocial');
@@ -27,29 +31,46 @@ class TestamentoController extends BaseController {
             $ocupacao = Input::get('ocupacao');
             $moradia = Input::get('moradia');
             $testamenteiro = Input::get('testamenteiro');
-            $relacaoTestamenteiro= Input::get('relacaoTestamenteiro');
+            $relacaoTestamenteiro = Input::get('relacaoTestamenteiro');
 
+            $validator = Validator::make(
+                array(
+                    'data' => $data,
+                    'sexo' => $sexo,
+                ),
+                array(
+                    'data' => 'date_format:Y-m-j',
+                    'sexo' => "in:M,F,I",
+                )
+            );
 
+            if ($validator->passes()) {
+                $testamento = new Testamento();
+                $testamento->nome = $nome;
+                $testamento->data = $data;
+                $testamento->condSocial = $condSocial;
+                $testamento->tituloSocial = $tituloSocial;
+                $testamento->causaMorte = $causaMorte;
+                $testamento->igrejaEnterro = $igrejaEnterro;
+                $testamento->habitoEnterro = $habitoEnterro;
+                $testamento->sexo = $sexo;
+                $testamento->naturalidade = $naturalidade;
+                $testamento->ocupacao = $ocupacao;
+                $testamento->moradia = $moradia;
+                $testamento->testamenteiro = $testamenteiro;
+                $testamento->relacaoTestamenteiro = $relacaoTestamenteiro;
 
-            $testamento = new Testamento();
-            $testamento->nome = $nome;
-            $testamento->data = $data;
-            $testamento->condSocial = $condSocial;
-            $testamento->tituloSocial = $tituloSocial;
-            $testamento->causaMorte = $causaMorte;
-            $testamento->igrejaEnterro = $igrejaEnterro;
-            $testamento->habitoEnterro = $habitoEnterro;
-            $testamento->sexo = $sexo;
-            $testamento->naturalidade = $naturalidade;
-            $testamento->ocupacao = $ocupacao;
-            $testamento->moradia = $moradia;
-            $testamento->testamenteiro = $testamenteiro;
-            $testamento->relacaoTestamenteiro = $relacaoTestamenteiro;
+                $testamento->save();
 
-            $testamento->save();
+                $this->layout->content = View::make('testamento.insert')->with("success","Testamento inserido com sucesso");
+            }
+            elseif ($validator->fails()) {
+                $this->layout->content = View::make('testamento.insert')->withErrors($validator);
+            }
+
         }
+        else $this->layout->content = View::make('testamento.insert');
 
-        $this->layout->content = View::make('testamento.insert');
     }
 
     public function find($id = null){

@@ -14,7 +14,7 @@
         <tbody>
             @foreach ($testamentos as $testamento)
                 <tr>
-                    <td><a href="find/{{$testamento->id}}"> {{$testamento->nome}}</td>
+                    <td><a href="find/{{$testamento->id}}" > {{$testamento->nome}}</a></td>
                     <td>{{$testamento->data}}</td>
                     <td>{{$testamento->tituloSocial}}</td>
                     <td>{{$testamento->testamenteiro}}</td>
