@@ -21,3 +21,4 @@ Route::get('/', function()
 Route::any('/erro', 'ErroController@mostrarErro');
 Route::any('/testamentos/insert', 'TestamentoController@insert');
 Route::any('/testamentos/find/{id?}', 'TestamentoController@find');
+Route::any('testamentos/erase/{id}', 'TestamentoController@erase');
