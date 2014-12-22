@@ -92,7 +92,7 @@ class TestamentoController extends BaseController {
 
         $testamento->delete();
 
-        return Redirect::back()->with('success', 'Testamento foi apagado com sucesso.');
+        return Redirect::back()->with('success', 'Testamento apagado com sucesso.');
 
     }
 
