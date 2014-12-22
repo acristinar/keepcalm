@@ -71,8 +71,12 @@
             <dd>
                 @if (empty($testamento->sexo))
                     Não consta
-                @else
-                    {{$testamento->sexo}}
+                @elseif($testamento->sexo=='F')
+                    Feminino
+                @elseif($testamento->sexo=='M')
+                    Masculino
+                @elseif($testamento->sexo=='I')
+                    Indefinido
                 @endif
             </dd>
 
