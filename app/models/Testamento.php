@@ -6,8 +6,14 @@
  * Time: 19:15
  */
 
+    use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
     class Testamento extends Eloquent{
 
+        use SoftDeletingTrait;
+
         protected $table = 'testamento';
+
+        protected $dates = ['deleted_at'];
+
     }

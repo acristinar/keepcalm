@@ -90,9 +90,21 @@ class TestamentoController extends BaseController {
     public function erase($id){
         $testamento = Testamento::find($id);
 
-        $testamento->delete();
 
-        return Redirect::back()->with('success', 'Testamento apagado com sucesso.');
+        $url = action('TestamentoController@find');
+        if(URL::previous() == $url){
+            $testamento->delete();
+
+            return Redirect::back()->with('success', 'Testamento apagado com sucesso.');
+        }
+        else {
+            return Redirect::to("/");
+        }
+
+
+
+
+
 
     }
 
