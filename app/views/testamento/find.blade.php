@@ -6,7 +6,6 @@
         <span>{{ Session::get('success') }}</span>
     @endif
 
-
     <table>
         <thead>
             <tr>
@@ -19,7 +18,7 @@
         <tbody>
             @foreach ($testamentos as $testamento)
                 <tr>
-                    <td><a href="find/{{$testamento->id}}" > {{$testamento->nome}}</a></td>
+                    <td>{{ HTML::link("testamentos/find/".$testamento->id , $testamento->nome )}}</td>
                     <td>{{$testamento->data}}</td>
                     <td>{{$testamento->tituloSocial}}</td>
                     <td>{{$testamento->testamenteiro}}</td>
