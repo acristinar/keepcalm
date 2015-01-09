@@ -23,6 +23,11 @@
                     <td>{{$testamento->tituloSocial}}</td>
                     <td>{{$testamento->testamenteiro}}</td>
                     <td>
+                        <a href="update/{{$testamento->id}}" >
+                            <button>Alterar</button>
+                        </a>
+                    </td>
+                    <td>
                         <a href="erase/{{$testamento->id}}" >
                             <button>Apagar</button>
                         </a>

@@ -87,25 +87,83 @@ class TestamentoController extends BaseController {
 
     }
 
-    public function erase($id){
+    public function erase($id)
+    {
         $testamento = Testamento::find($id);
 
 
         $url = action('TestamentoController@find');
-        if(URL::previous() == $url){
+        if (URL::previous() == $url) {
             $testamento->delete();
 
             return Redirect::back()->with('success', 'Testamento apagado com sucesso.');
-        }
-        else {
+        } else {
             return Redirect::to("/");
         }
+    }
 
+    public function update($id){
 
+        $testamento = Testamento::find($id);
 
+        //var_dump($testamento);
 
+        if((Input::has('nome')) && (Input::get('nome') != $testamento->nome)){
 
+            $testamento->nome = Input::get('nome');
+        }
+        if((Input::has('data')) && (Input::get('data') != $testamento->data)){
 
+            $testamento->data = Input::get('data');
+        }
+        if((Input::has('condSocial')) && (Input::get('condSocial') != $testamento->condSocial)){
+
+            $testamento->condSocial = Input::get('condSocial');
+        }
+        if((Input::has('tituloSocial')) && (Input::get('tituloSocial') != $testamento->tituloSocial)){
+
+            $testamento->tituloSocial = Input::get('tituloSocial');
+        }
+        if((Input::has('causaMorte')) && (Input::get('causaMorte') != $testamento->causaMorte)){
+
+            $testamento->causaMorte = Input::get('causaMorte');
+        }
+        if((Input::has('igrejaEnterro')) && (Input::get('igrejaEnterro') != $testamento->igrejaEnterro)){
+
+            $testamento->igrejaEnterro = Input::get('igrejaEnterro');
+        }
+        if((Input::has('habitoEnterro')) && (Input::get('habitoEnterro') != $testamento->habitoEnterro)){
+
+            $testamento->habitoEnterro = Input::get('habitoEnterro');
+        }
+        if((Input::has('sexo')) && (Input::get('sexo') != $testamento->sexo)){
+
+            $testamento->sexo = Input::get('sexo');
+        }
+        if((Input::has('naturalidade')) && (Input::get('naturalidade') != $testamento->naturalidade)){
+
+            $testamento->naturalidade = Input::get('naturalidade');
+        }
+        if((Input::has('ocupacao')) && (Input::get('ocupacao') != $testamento->ocupacao)){
+
+            $testamento->ocupacao = Input::get('ocupacao');
+        }
+        if((Input::has('moradia')) && (Input::get('moradia') != $testamento->moradia)){
+
+            $testamento->moradia = Input::get('moradia');
+        }
+        if((Input::has('testamenteiro')) && (Input::get('testamenteiro') != $testamento->testamenteiro)){
+
+            $testamento->testamenteiro = Input::get('testamenteiro');
+        }
+        if((Input::has('relacaoTestamenteiro')) && (Input::get('relacaoTestamenteiro') != $testamento->relacaoTestamenteiro)){
+
+            $testamento->relacaoTestamenteiro = Input::get('relacaoTestamenteiro');
+        }
+
+        $testamento->save();
+
+        $this->layout->content = View::make('testamento.update', array('testamento' => $testamento));
     }
 
 
