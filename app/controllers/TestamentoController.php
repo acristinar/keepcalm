@@ -178,8 +178,7 @@ class TestamentoController extends BaseController {
 
         if($alterou){
             $testamento->save();
-            $this->layout->content = View::make('testamento.update', array('testamento' => $testamento));
-            return Redirect::to('/testamentos/find')->with('success', 'Testamento alterado com sucesso.');
+            $this->layout->content = View::make('testamento.read', array('testamento' => $testamento));
         }
         else $this->layout->content = View::make('testamento.update', array('testamento' => $testamento));
 
