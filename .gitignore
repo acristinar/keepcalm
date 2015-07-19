@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 /vendor
 /node_modules
 Homestead.yaml
 .env
 .idea/
+=======
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+.idea/
+
+app/config/database.php
+>>>>>>> 5ac5a59bb754994ad25363f922f6dda43afd5c59
