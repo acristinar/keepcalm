@@ -1,0 +1,142 @@
+  
+
+
+  <?php $__env->startSection('content'); ?>
+    <dl>
+        <dt>Nome</dt>
+            <dd>
+                <?php if(empty($testamento->nome)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->nome; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Ano de Falecimento</dt>
+            <dd>
+                <?php if(empty($testamento->data)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->data; ?>
+
+                <?php endif; ?>
+
+
+        <dt>Condição Social</dt>
+            <dd>
+                <?php if(empty($testamento->condSocial)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->condSocial; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Título Social</dt>
+            <dd>
+                <?php if(empty($testamento->tituloSocial)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->tituloSocial; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Causa da Morte</dt>
+            <dd>
+                <?php if(empty($testamento->causaMorte)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->causaMorte; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Igreja em que foi enterrado</dt>
+            <dd>
+                <?php if(empty($testamento->igrejaEnterro)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->igrejaEnterro; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Hábito no qual foi enterrado</dt>
+            <dd>
+                <?php if(empty($testamento->habitoEnterro)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->habitoEnterro; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Sexo</dt>
+            <dd>
+                <?php if(empty($testamento->sexo)): ?>
+                    Não consta
+                <?php elseif($testamento->sexo=='F'): ?>
+                    Feminino
+                <?php elseif($testamento->sexo=='M'): ?>
+                    Masculino
+                <?php elseif($testamento->sexo=='I'): ?>
+                    Indefinido
+                <?php endif; ?>
+            </dd>
+
+        <dt>Naturalidade</dt>
+            <dd>
+                <?php if(empty($testamento->naturalidade)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->naturalidade; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Ocupação</dt>
+            <dd>
+                <?php if(empty($testamento->ocupacao)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->ocupacao; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Moradia</dt>
+            <dd>
+                <?php if(empty($testamento->moradia)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->moradia; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Testamenteiro</dt>
+            <dd>
+                <?php if(empty($testamento->testamenteiro)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->testamenteiro; ?>
+
+                <?php endif; ?>
+            </dd>
+
+        <dt>Relação com o testamenteiro</dt>
+            <dd>
+                <?php if(empty($testamento->relacaoTestamenteiro)): ?>
+                    Não consta
+                <?php else: ?>
+                    <?php echo $testamento->relacaoTestamenteiro; ?>
+
+                <?php endif; ?>
+            </dd>
+
+    </dl>
+
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('pai', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

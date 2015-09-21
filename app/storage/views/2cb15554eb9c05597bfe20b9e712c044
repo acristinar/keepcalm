@@ -1,0 +1,87 @@
+<?php $__env->startSection('content'); ?>
+
+    <?php echo isset($success)? "<span>".$success."</span>" : ""; ?>
+
+
+
+    <?php echo Form::model($testamento, array('route' => array('testamento.update', $testamento->id))); ?>
+
+
+
+        <?php echo Form::label('nome','Nome'); ?>
+
+        <?php echo Form::text('nome'); ?>
+
+
+        <?php echo Form::label('data','Ano de falecimento'); ?>
+
+        <input type="date" name="data" class="campos" />
+        <?php echo $errors->first('data', '<span>:message</span>'); ?>
+
+
+        <?php echo Form::label('condSocial','Condição Social'); ?>
+
+        <?php echo Form::text('condSocial'); ?>
+
+
+        <?php echo Form::label('tituloSocial','Título'); ?>
+
+        <?php echo Form::text('tituloSocial'); ?>
+
+
+        <?php echo Form::label('causaMorte','Causa da Morte'); ?>
+
+        <?php echo Form::text('causaMorte'); ?>
+
+
+        <?php echo Form::label('igrejaEnterro','Igreja em que foi enterrado'); ?>
+
+        <?php echo Form::text('igrejaEnterro'); ?>
+
+
+        <?php echo Form::label('habitoEnterro','Hábito no qual foi enterrado'); ?>
+
+        <?php echo Form::text('habitoEnterro'); ?>
+
+
+        <?php echo Form::label('sexo','Sexo'); ?>
+
+        <?php echo Form::select('sexo', array('F' => 'Feminino', 'M' => 'Masculino','I' => 'Indefinido'));; ?>
+
+        <?php echo $errors->first('sexo', '<span>:message</span>'); ?>
+
+
+        <?php echo Form::label('naturalidade','Naturalidade'); ?>
+
+        <?php echo Form::text('naturalidade'); ?>
+
+
+        <?php echo Form::label('ocupacao','Ofício/ocupação'); ?>
+
+        <?php echo Form::text('ocupacao'); ?>
+
+
+        <?php echo Form::label('moradia','Moradia'); ?>
+
+        <?php echo Form::text('moradia'); ?>
+
+
+        <?php echo Form::label('testamenteiro','Testamenteiro'); ?>
+
+        <?php echo Form::text('testamenteiro'); ?>
+
+
+        <?php echo Form::label('relacaoTestamenteiro','Relação com o testamenteiro'); ?>
+
+        <?php echo Form::text('relacaoTestamenteiro'); ?>
+
+
+        <?php echo Form::submit('Alterar'); ?>
+
+
+    <?php echo Form::close(); ?>
+
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('pai', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

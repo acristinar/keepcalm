@@ -1,0 +1,41 @@
+  
+
+  <?php $__env->startSection('content'); ?>
+
+    <?php if(Session::has('success')): ?>
+        <span><?php echo Session::get('success'); ?></span>
+    <?php endif; ?>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Data</td>
+                <td>Título Social</td>
+                <td>Testamenteiro</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($testamentos as $testamento): ?>
+                <tr>
+                    <td><?php echo HTML::link("testamentos/find/".$testamento->id , $testamento->nome ); ?></td>
+                    <td><?php echo $testamento->data; ?></td>
+                    <td><?php echo $testamento->tituloSocial; ?></td>
+                    <td><?php echo $testamento->testamenteiro; ?></td>
+                    <td>
+                        <a href="update/<?php echo $testamento->id; ?>" >
+                            <button>Alterar</button>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="erase/<?php echo $testamento->id; ?>" >
+                            <button>Apagar</button>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('pai', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
