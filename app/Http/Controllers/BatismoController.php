@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Testamento;
+use App\Batismo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
@@ -35,22 +35,21 @@ class BatismoController extends Controller {
 
             ]);
 
-            $testamento = new Testamento();
-            $testamento->ano = $request->get('ano');
-            $testamento->nome = $request->get('nome');
-            $testamento->data = $request->get('data');
-            $testamento->sexo = $request->get('sexo');
-            $testamento->pai = $request->get('pai');
-            $testamento->mae = $request->get('mae');
-            $testamento->condSocialPais = $request->get('condSocialPais');
-            $testamento->moradiaPais = $request->get('moradiaPais');
-            $testamento->padrinho = $request->get('padrinho');
-            $testamento->madrinha = $request->get('madrinha');
-            $testamento->ocupacao = $request->get('ocupacao');
-            $testamento->condSocialPadrinhos = $request->get('condSocialPadrinhos');
-            $testamento->moradiaPadrinhos = $request->get('moradiaPadrinhos');
+            $batismo = new Batismo();
+            $batismo->ano = $request->get('ano');
+            $batismo->nome = $request->get('nome');
+            $batismo->data = $request->get('data');
+            $batismo->sexo = $request->get('sexo');
+            $batismo->pai = $request->get('pai');
+            $batismo->mae = $request->get('mae');
+            $batismo->condSocialPais = $request->get('condSocialPais');
+            $batismo->moradiaPais = $request->get('moradiaPais');
+            $batismo->padrinho = $request->get('padrinho');
+            $batismo->madrinha = $request->get('madrinha');
+            $batismo->condSocialPadrinhos = $request->get('condSocialPadrinhos');
+            $batismo->moradiaPadrinhos = $request->get('moradiaPadrinhos');
 
-            $testamento->save();
+            $batismo->save();
 
             return view('batismo.insert')->with("success","Batismo inserido com sucesso");
 
