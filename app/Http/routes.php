@@ -25,3 +25,4 @@ Route::any('/testamentos/erase/{id}', 'TestamentoController@erase');
 Route::any('testamentos/update/{id}', array('as' => 'testamento.update', 'uses' => 'TestamentoController@update'));
 
 Route::any('/batismo/insert', 'BatismoController@insert');
+Route::any('/batismo/find/{id?}', 'BatismoController@find');

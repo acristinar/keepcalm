@@ -24,9 +24,9 @@ class BatismoController extends Controller {
     {
 
 
-        if ($request->has('ano') || $request->has('nome') || $request->has('data') || $request->has('pai') || $request->has('mae') ||
-            $request->has('condSocialPais') || $request->has('moradiaPais') || $request->has('padrinho') ||
-            $request->has('madrinha') || $request->has('condSocialPadrinhos') || $request->has('moradiaPadrinhos') ) {
+        if ($request->has('nome') || $request->has('data') || $request->has('pai') || $request->has('mae') ||
+            $request->has('condSocialPai')  || $request->has('condSocialMae') || $request->has('moradiaPai') || $request->has('moradiaMae') || $request->has('padrinho') ||
+            $request->has('madrinha') || $request->has('condSocialPadrinho') || $request->has('condSocialMadrinha') || $request->has('moradiaPadrinho') || $request->has('moradiaMadrinha') ) {
 
 
             $this->validate($request,[
@@ -35,21 +35,24 @@ class BatismoController extends Controller {
 
             ]);
 
-            $batismo = new Batismo();
-            $batismo->ano = $request->get('ano');
-            $batismo->nome = $request->get('nome');
-            $batismo->data = $request->get('data');
-            $batismo->sexo = $request->get('sexo');
-            $batismo->pai = $request->get('pai');
-            $batismo->mae = $request->get('mae');
-            $batismo->condSocialPais = $request->get('condSocialPais');
-            $batismo->moradiaPais = $request->get('moradiaPais');
-            $batismo->padrinho = $request->get('padrinho');
-            $batismo->madrinha = $request->get('madrinha');
-            $batismo->condSocialPadrinhos = $request->get('condSocialPadrinhos');
-            $batismo->moradiaPadrinhos = $request->get('moradiaPadrinhos');
+            $batismos = new Batismo();
+            $batismos->nome = $request->get('nome');
+            $batismos->data = $request->get('data');
+            $batismos->sexo = $request->get('sexo');
+            $batismos->pai = $request->get('pai');
+            $batismos->mae = $request->get('mae');
+            $batismos->condSocialPai = $request->get('condSocialPai');
+            $batismos->condSocialMae = $request->get('condSocialMae');
+            $batismos->moradiaPai = $request->get('moradiaPai');
+            $batismos->moradiaMae= $request->get('moradiaMae');
+            $batismos->padrinho = $request->get('padrinho');
+            $batismos->madrinha = $request->get('madrinha');
+            $batismos->condSocialPadrinho = $request->get('condSocialPadrinho');
+            $batismos->condSocialMadrinha = $request->get('condSocialMadrinha');
+            $batismos->moradiaPadrinho = $request->get('moradiaPadrinho');
+            $batismos->moradiaMadrinha = $request->get('moradiaMadrinha');
 
-            $batismo->save();
+            $batismos->save();
 
             return view('batismo.insert')->with("success","Batismo inserido com sucesso");
 
@@ -57,5 +60,15 @@ class BatismoController extends Controller {
         }
         else return view('batismo.insert');
 
+    }
+
+    public function find($id = null){
+        if($id == null){
+            $batismos = Batismo::all();
+            return view('batismo.find',['batismos' => $batismos]);
+        }else{
+            $batismo = Batismo::find($id);
+            return view('batismo.read',['batismo' => $batismo]);
+        }
     }
 }
