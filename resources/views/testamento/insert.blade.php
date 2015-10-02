@@ -31,7 +31,7 @@
         {!! Form::text('habitoEnterro') !!}
 
         {!! Form::label('sexo','Sexo') !!}
-        {!! Form::select('sexo', array('F' => 'Feminino', 'M' => 'Masculino','I' => 'Indefinido')); !!}
+        {!! Form::select('sexo', array('F' => 'Feminino', 'M' => 'Masculino','I' => 'Indefinido')) !!}
         {!! $errors->first('sexo', '<span>:message</span>') !!}
 
         {!! Form::label('naturalidade','Naturalidade') !!}
@@ -52,6 +52,5 @@
         {!! Form::submit('Enviar') !!}
 
     {!! Form::close() !!}
-
-
+    
 @stop
