@@ -5,10 +5,11 @@
 
     {!! isset($success)? "<span>".$success."</span>" : "" !!}
 
-    {!! Form::open(array('url'=>'batismo/insert'))   !!}
+    {!! Form::model($batismo, array('route' => array('batismo.update', $batismo->id))) !!}
 
         {!! Form::label('nome','Nome') !!}
         {!! Form::text('nome') !!}
+
         {!! Form::label('data','Data de batismo') !!}
         <input type="date" name="data" class="campos" />
         {!! $errors->first('data', '<span>:message</span>') !!}
@@ -53,7 +54,7 @@
         {!! Form::label('moradiaMadrinha','Moradia da Madrinha') !!}
         {!! Form::text('moradiaMadrinha') !!}
 
-        {!! Form::submit('Enviar') !!}
+        {!! Form::submit('Alterar') !!}
 
     {!! Form::close() !!}
 

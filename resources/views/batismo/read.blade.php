@@ -8,7 +8,7 @@
         <dt>Nome</dt>
         <dd>
             @if (empty($batismo->nome))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->nome}}
             @endif
@@ -18,7 +18,7 @@
         <dt>Data de Batismo</dt>
         <dd>
             @if (empty($batismo->data))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->data}}
             @endif
@@ -27,7 +27,7 @@
         <dt>Sexo</dt>
         <dd>
             @if (empty($batismo->sexo))
-                Não consta
+                NÃ£o consta
             @elseif($batismo->sexo=='F')
                 Feminino
             @elseif($batismo->sexo=='M')
@@ -40,34 +40,34 @@
         <dt>Nome do Pai</dt>
         <dd>
             @if (empty($batismo->pai))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->pai}}
             @endif
         </dd>
 
-        <dt>Nome da Mãe</dt>
+        <dt>Nome da MÃ£e</dt>
         <dd>
             @if (empty($batismo->mae))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->mae}}
             @endif
         </dd>
 
-        <dt>Condição Social do Pai</dt>
+        <dt>CondiÃ§Ã£o Social do Pai</dt>
         <dd>
             @if (empty($batismo->condSocialPai))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->condSocialPai}}
             @endif
         </dd>
 
-        <dt>Condição Social da Mãe</dt>
+        <dt>CondiÃ§Ã£o Social da MÃ£e</dt>
         <dd>
             @if (empty($batismo->condSocialMae))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->condSocialMae}}
             @endif
@@ -76,16 +76,16 @@
         <dt>Moradia do Pai</dt>
         <dd>
             @if (empty($batismo->moradiaPai))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->moradiaPai}}
             @endif
         </dd>
 
-        <dt>Moradia da Mãe</dt>
+        <dt>Moradia da MÃ£e</dt>
         <dd>
             @if (empty($batismo->moradiaMae))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->moradiaMae}}
             @endif
@@ -94,7 +94,7 @@
         <dt>Padrinho</dt>
         <dd>
             @if (empty($batismo->padrinho))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->padrinho}}
             @endif
@@ -103,25 +103,25 @@
         <dt>Madrinha</dt>
         <dd>
             @if (empty($batismo->madrinha))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->madrinha}}
             @endif
         </dd>
 
-        <dt>Condição Social do Padrinho</dt>
+        <dt>CondiÃ§Ã£o Social do Padrinho</dt>
         <dd>
             @if (empty($batismo->condSocialPadrinho))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->condSocialPadrinho}}
             @endif
         </dd>
 
-        <dt>Condição Social da Madrinha</dt>
+        <dt>CondiÃ§Ã£o Social da Madrinha</dt>
         <dd>
             @if (empty($batismo->condSocialMadrinha))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->condSocialMadrinha}}
             @endif
@@ -130,7 +130,7 @@
         <dt>Moradia do Padrinho</dt>
         <dd>
             @if (empty($batismo->moradiaPadrinho))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->moradiaPadrinho}}
             @endif
@@ -139,7 +139,7 @@
         <dt>Moradia da Madrinhao</dt>
         <dd>
             @if (empty($batismo->moradiaMadrinha))
-                Não consta
+                NÃ£o consta
             @else
                 {{$batismo->moradiaMadrinha}}
             @endif
