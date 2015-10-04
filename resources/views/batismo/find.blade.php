@@ -1,10 +1,8 @@
 @extends('pai')
 
 @section('content')
-
-    @if(isset($success))
-        <span>{{ $success }}</span>
-    @endif
+    <?php $success = Session::get('success'); ?>
+    {{$success or '' }}
 
     <table>
         <thead>
