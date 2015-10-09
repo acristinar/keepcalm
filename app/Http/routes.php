@@ -21,10 +21,14 @@ Route::any('/erro', 'ErroController@mostrarErro');
 Route::any('/testamentos/insert', 'TestamentoController@insert');
 Route::any('/testamentos/find/{id?}', 'TestamentoController@find');
 Route::any('/testamentos/erase/{id}', 'TestamentoController@erase');
-//Route::any('/testamentos/update/{id}', 'TestamentoController@update');
 Route::any('testamentos/update/{id}', array('as' => 'testamento.update', 'uses' => 'TestamentoController@update'));
 
 Route::any('/batismo/insert', 'BatismoController@insert');
 Route::any('/batismo/find/{id?}', 'BatismoController@find');
 Route::any('/batismo/erase/{id}', 'BatismoController@erase');
 Route::any('/batismo/update/{id}', array('as' => 'batismo.update', 'uses' => 'BatismoController@update'));
+
+Route::any('/inventario/insert', 'InventarioController@insert');
+Route::any('/inventario/find/{id?}', 'InventarioController@find');
+Route::any('/inventario/erase/{id}', 'InventarioController@erase');
+Route::any('/inventario/update/{id}', array('as' => 'inventario.update', 'uses' => 'InventarioController@update'));
