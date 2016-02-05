@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 use App\Inventario;
+use App\Pessoa;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
@@ -27,10 +29,22 @@ class InventarioController extends Controller
         if ($request->has('gastosFunerarios') || $request->has('bens') || $request->has('dividas') || $request->has('divisaoBens'))
         {
             $inventarios = new Inventario();
+            $pessoa = new Pessoa();
+
+            $pessoa->nome = $request->get('nome');
+            $inventarios->nome = $request->get('data');
             $inventarios->gastosFunerarios = $request->get('gastosFunerarios');
-            $inventarios->bens = $request->get('bens');
             $inventarios->dividas = $request->get('dividas');
-            $inventarios->divisaoBens = $request->get('divisaoBens');
+
+            $pessoa_id = DB::table('pessoa')
+                ->select('id')
+                ->where('nome', $pessoa->nome);
+
+            if ($pessoa_id == null){
+                $pessoa->save();
+            }
+
+            $inventarios->pessoa_id = $pessoa_id;
 
             $inventarios->save();
 

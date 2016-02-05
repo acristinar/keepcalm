@@ -9,6 +9,7 @@
 
         {!! Form::label('nome','Nome') !!}
         {!! Form::text('nome') !!}
+
         {!! Form::label('data','Data de batismo') !!}
         <input type="date" name="data" class="campos" />
         {!! $errors->first('data', '<span>:message</span>') !!}
