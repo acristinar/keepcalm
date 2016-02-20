@@ -10,13 +10,12 @@ namespace App\Http\Controllers;
 
 use App\Inventario;
 use App\Pessoa;
-use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
 use Illuminate\Routing\UrlGenerator;
 
-class InventarioController extends Controller
+class InventarioController extends PessoaController
 {
     public function __construct()
     {
@@ -32,19 +31,11 @@ class InventarioController extends Controller
             $pessoa = new Pessoa();
 
             $pessoa->nome = $request->get('nome');
-            $inventarios->nome = $request->get('data');
+            $inventarios->data = $request->get('data');
             $inventarios->gastosFunerarios = $request->get('gastosFunerarios');
             $inventarios->dividas = $request->get('dividas');
 
-            $pessoa_id = DB::table('pessoa')
-                ->select('id')
-                ->where('nome', $pessoa->nome);
-
-            if ($pessoa_id == null){
-                $pessoa->save();
-            }
-
-            $inventarios->pessoa_id = $pessoa_id;
+            $inventarios->pessoa_id = $this->getPessoa($pessoa->nome);
 
             $inventarios->save();
 
