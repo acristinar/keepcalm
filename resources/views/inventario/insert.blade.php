@@ -19,6 +19,14 @@
     {!! Form::label('dividas','Dívidas') !!}
     {!! Form::text('dividas') !!}
 
+    {!! Form::label('nome_beneficiado','Nome do Beneficiado', array('class' => 'nome_beneficiado')) !!}
+    {!! Form::text('nome_beneficiado') !!}
+
+    {!! Form::label('bens','Bens', array('class' => 'bens')) !!}
+    {!! Form::textarea('bens') !!}
+
+    {!!Form::button('Adicionar mais beneficiados') !!}
+
     {!! Form::submit('Enviar') !!}
 
     {!! Form::close() !!}
