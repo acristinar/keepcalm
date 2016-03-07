@@ -19,4 +19,14 @@ class Inventario extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
     public $timestamps = false;
+
+    public function pessoa()
+    {
+        return $this->hasOne('App\Pessoa');
+    }
+
+    /* public function pessoas(){
+        return $this->belongsToMany('App\Pessoa');
+    } */
+
 }

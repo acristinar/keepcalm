@@ -20,4 +20,14 @@ class Pessoa extends Model
     protected $primaryKey = 'id';
     protected $dates = ['deleted_at'];
     public $timestamps = false;
+
+    public function inventario()
+    {
+        return $this->belongsToMany('App\Inventario');
+    }
+
+    /* public function inventarios()
+    {
+        return $this->belongsToMany('App\Inventario');
+    } */
 }

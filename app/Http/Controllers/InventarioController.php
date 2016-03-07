@@ -10,12 +10,13 @@ namespace App\Http\Controllers;
 
 use App\Inventario;
 use App\Pessoa;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
 use Illuminate\Routing\UrlGenerator;
 
-class InventarioController extends PessoaController
+class InventarioController extends Controller
 {
     public function __construct()
     {
@@ -35,7 +36,12 @@ class InventarioController extends PessoaController
             $inventarios->gastosFunerarios = $request->get('gastosFunerarios');
             $inventarios->dividas = $request->get('dividas');
 
-            $inventarios->pessoa_id = $this->getPessoa($pessoa->nome);
+            /* $id_pessoa = Pessoa::has('nome','=', $pessoa->nome)->first();
+
+            if ($id_pessoa->id == null){
+                $pessoa->save();
+                $this->insert();
+            }                           --------------- essa porra nao funfa, ver outra parada */
 
             $inventarios->save();
 
