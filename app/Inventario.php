@@ -22,7 +22,7 @@ class Inventario extends Model
 
     public function pessoa()
     {
-        return $this->hasOne('App\Pessoa');
+        return $this->belongsTo('App\Pessoa', 'pessoa_id');
     }
 
     /* public function pessoas(){

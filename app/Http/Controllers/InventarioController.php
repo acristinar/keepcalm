@@ -36,12 +36,12 @@ class InventarioController extends Controller
             $inventarios->gastosFunerarios = $request->get('gastosFunerarios');
             $inventarios->dividas = $request->get('dividas');
 
-            /* $id_pessoa = Pessoa::has('nome','=', $pessoa->nome)->first();
+            $nome_pessoa = Pessoa::findOrNew($pessoa->nome)->first();
 
-            if ($id_pessoa->id == null){
+            if ($nome_pessoa->id == null){
                 $pessoa->save();
                 $this->insert();
-            }                           --------------- essa porra nao funfa, ver outra parada */
+            }
 
             $inventarios->save();
 

@@ -23,7 +23,7 @@ class Pessoa extends Model
 
     public function inventario()
     {
-        return $this->belongsToMany('App\Inventario');
+        return $this->hasMany('App\Inventario', 'pessoa_id', 'id');
     }
 
     /* public function inventarios()
